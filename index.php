@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php echo "hello PHP"?>
 <html>
 <head>
 <title>Kong Page</title>
