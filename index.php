@@ -27,10 +27,12 @@
             <h4>Place Order</h4>
             <div class="panel panel-default">
                 <div class="panel-body form-horizontal payment-form">
+                  <form class="add-item" value="Send" type="submit">
                     <div class="form-group">
                         <label for="location" class="col-sm-3 control-label">Location</label>
                         <div class="col-sm-9">
-                            <select class="form-control" id="location" name="location">
+                            <select class="form-control" id="location" name="location" required>
+                                <option value=""></option>
                                 <option>San Francisco</option>
                                 <option>Los Angeles</option>
                             </select>
@@ -45,34 +47,34 @@
                     <div class="form-group">
                         <label for="milk" class="col-sm-3 control-label">Milk</label>
                         <div class="col-sm-9">
-                            <select class="form-control" id="milk" name="milk">
-                                <option>--Choose One--</option>
-                                <option>Coconut Milk</option>
-                                <option>Soy Milk</option>
-                                <option>Half N Half</option>
+                            <select class="form-control" id="milk" name="milk" required>
+                                <option value=""></option>
+                                <option value="CM">Coconut Milk</option>
+                                <option value="SM">Soy Milk</option>
+                                <option value="HH">Half N Half</option>
                             </select>
                         </div>
                     </div>  
                     <div class="form-group">
                         <label for="name" class="col-sm-3 control-label">Name</label>
                         <div class="col-sm-9">
-                            <select class="form-control" id="name" name="name">
-                                <option>--Choose One--</option>
-                                <option>Latte Macchiato</option>
-                                <option>Americano</option>
-                                <option>Expresso Macchiato</option>
-                                <option>Cappuccino</option>
-                                <option>Latte</option>
-                                <option>Caramel Macchiato</option>
-                                <option>Mocha</option>
+                            <select class="form-control" id="name" name="name" required>
+                                <option value=""></option>
+                                <option value="LM">Latte Macchiato</option>
+                                <option value="A">Americano</option>
+                                <option value="EM">Expresso Macchiato</option>
+                                <option value="C">Cappuccino</option>
+                                <option value="L">Latte</option>
+                                <option value="CM">Caramel Macchiato</option>
+                                <option value="M">Mocha</option>
                             </select>
                         </div>
                     </div> 
                     <div class="form-group">
                         <label for="size" class="col-sm-3 control-label">Size</label>
                         <div class="col-sm-9">
-                            <select class="form-control" id="size" name="size">
-                                <option>--Choose One--</option>
+                            <select class="form-control" id="size" name="size" required>
+                                <option value=""></option>
                                 <option>Short</option>
                                 <option>Tall</option>
                                 <option>Grande</option>
@@ -82,11 +84,12 @@
                     </div>          
                     <div class="form-group">
                         <div class="col-sm-12 text-right">
-                            <button type="button" class="btn btn-default preview-add-button">
+                            <button type="submit" class="btn btn-default preview-add-button">
                                 <span class="glyphicon glyphicon-plus"></span> Add
                             </button>
                         </div>
                     </div>
+                  </form>
                 </div>
             </div>            
         </div> <!-- / panel preview -->
@@ -113,7 +116,7 @@
             </div>
             <div class="row text-right">
                 <div class="col-xs-12">
-                    <h4>Total: $<strong><span class="preview-total"></span></strong></h4>
+                    <h4>Total: $<strong><span class="preview-total">0.00</span></strong></h4>
                 </div>
             </div>
             <div class="row">

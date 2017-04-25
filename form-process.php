@@ -10,7 +10,7 @@ if (empty($_POST["name"])) {
 }
 
 // EMAIL
-if (empty($_POST["email"])) {
+/*if (empty($_POST["email"])) {
     $errorMSG .= "Email is required ";
 } else {
     $email = $_POST["email"];
@@ -62,6 +62,6 @@ if ($success && $errorMSG == ""){
     } else {
         echo $errorMSG;
     }
-}
+}*/
 
 ?>
