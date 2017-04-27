@@ -62,11 +62,12 @@ $('.order-now').submit(function(){
 
         var data = JSON.stringify(order)
         $.post( "post.php", {Orderdata: data}, function(response) {
-          $( ".result" ).html(response);
+          $(".result" ).html(response);
         });
         alert("Order was PLACED!");
     }
     
+
     return false;
 });
 

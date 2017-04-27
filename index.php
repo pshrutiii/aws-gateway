@@ -25,6 +25,19 @@
         font-size: 15px;
         border-radius: 20px;
       }
+      dt{
+        font-size: 18px;
+        padding-top: 6%;
+      }
+      dd{
+        font-size: 12px;
+        font-style: italic;
+        line-height: 0.5;
+
+      }
+      .results{
+        background-color: #DCDDDF;
+      }
     </style>
 </head>
 <body>
@@ -33,9 +46,8 @@
         <div class="col-sm-12">
             <img src="logo.png" href="/" style="width:120px;"/>
         </div>
-        <div style="padding-top: 12%;"></div>
         <!-- panel preview -->
-        <div class="col-sm-5">
+        <div class="col-sm-5" id="choose-coffee" >
             <h4 id="heading">Choose your coffee</h4>
             <div class="panel panel-default">
                 <div class="panel-body form-horizontal payment-form">
@@ -139,12 +151,14 @@
         </div>
   </div>
 </div>
-
-
-<div>
-  <h4>Testing (Results div)</h4>
-  <p class="result"></p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-2 results">
+      <p class="result"></p>
+    </div>
+  </div>
 </div>
+
   <script src="../resources/jquery/jquery.min.js"></script> <!-- jQuery -->
   <script src="../resources/bootstrap/js/bootstrap.min.js"></script> <!-- Bootstrap Core JavaScript -->
   <script src="form-script.js"></script>
