@@ -9,11 +9,23 @@
     <link rel='shortcut icon' href='fav.png' type='image/x-icon'/ >
     <title>Starbucks Page</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap Core CSS -->
+    <link href="/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"><!-- Custom Fonts -->
+    <style>
+      #heading{
+        color: #006341;
+        font-weight: 600;
+        font-size: 25px;
+      }
+      .panel{
+        background-color: #006341;
+        color: white;
+        font-weight: 600;
+        font-size: 15px;
+        border-radius: 20px;
+      }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -21,23 +33,13 @@
         <div class="col-sm-12">
             <img src="logo.png" href="/" style="width:120px;"/>
         </div>
-        <div style="padding-top: 15%;"></div>
+        <div style="padding-top: 12%;"></div>
         <!-- panel preview -->
         <div class="col-sm-5">
-            <h4>Place Order</h4>
+            <h4 id="heading">Choose your coffee</h4>
             <div class="panel panel-default">
                 <div class="panel-body form-horizontal payment-form">
                   <form class="add-item" value="Send" type="submit">
-                    <div class="form-group">
-                        <label for="location" class="col-sm-3 control-label">Location</label>
-                        <div class="col-sm-9">
-                            <select class="form-control" id="location" name="location" required>
-                                <option value=""></option>
-                                <option>San Francisco</option>
-                                <option>Los Angeles</option>
-                            </select>
-                        </div>
-                    </div>
                     <div class="form-group">
                         <label for="quantity" class="col-sm-3 control-label">Quantity</label>
                         <div class="col-sm-9">
@@ -49,9 +51,9 @@
                         <div class="col-sm-9">
                             <select class="form-control" id="milk" name="milk" required>
                                 <option value=""></option>
-                                <option value="CM">Coconut Milk</option>
-                                <option value="SM">Soy Milk</option>
-                                <option value="HH">Half N Half</option>
+                                <option>Fat-free</option>
+                                <option>Soy Milk</option>
+                                <option>Half-N-Half</option>
                             </select>
                         </div>
                     </div>  
@@ -94,7 +96,8 @@
             </div>            
         </div> <!-- / panel preview -->
         <div class="col-sm-7">
-            <h4>Preview:</h4>
+            <h4 id="heading">Looks good?</h4>
+            <form class="order-now" type="submit">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="table-responsive">
@@ -105,7 +108,6 @@
                                     <th>Name</th>
                                     <th>Milk</th>
                                     <th>Size</th>
-                                    <th>Pickup Location</th>
                                     <th>Amount</th>
                                 </tr>
                             </thead>
@@ -119,16 +121,30 @@
                     <h4>Total: $<strong><span class="preview-total">0.00</span></strong></h4>
                 </div>
             </div>
-            <div class="row">
+            <div class="row text-right">
+                <label for="location" class="col-sm-3 control-label">Pickup Location</label>
+                <div class="col-sm-4">
+                    <select class="form-control" id="location" name="location" required>
+                        <option value=""></option>
+                        <option>San Francisco</option>
+                        <option>Los Angeles</option>
+                    </select>
+                </div>
                 <div class="col-xs-12">
                     <hr style="border:1px dashed #dddddd;">
-                    <button type="button" class="btn btn-block" style="background: #006341; color: white; font-size: 15px; font-weight: 600;">Pay Now</button>
+                    <button type="submit" class="btn btn-block" style="background: #006341; color: white; font-size: 15px; font-weight: 600;">Order Now</button>
                 </div>                
             </div>
+          </form>
         </div>
   </div>
 </div>
 
+
+<div>
+  <h4>Testing (Results div)</h4>
+  <p class="result"></p>
+</div>
   <script src="../resources/jquery/jquery.min.js"></script> <!-- jQuery -->
   <script src="../resources/bootstrap/js/bootstrap.min.js"></script> <!-- Bootstrap Core JavaScript -->
   <script src="form-script.js"></script>
