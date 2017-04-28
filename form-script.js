@@ -90,7 +90,6 @@ $('.add-item').submit(function(){
     form_data["size"] = $('.payment-form #size option:selected').text();
     form_data["amount"] = parseFloat(form_data["quantity"] * get_price($('.payment-form #size option:selected').text())).toFixed(2);
     form_data["remove-row"] = '<span class="glyphicon glyphicon-remove"></span>';
-    form_data["edit-row"] = '<span class="glyphicon glyphicon-pencil"></span>';
     var row = $('<tr></tr>');
     $.each(form_data, function( type, value ) {
         $('<td class="input-'+type+'"></td>').html(value).appendTo(row);

@@ -42,10 +42,10 @@ function postOrder($currentOrder){
 
 	$result = post_data($url, $order); 	//POSTS order
 	echo "---------Your data has been posted!!!--------";
-	//print_r($result);
+	print_r($result);
 
 	//$currentOrderId = $result["orders"]["_id"]; //TODO: how to get the id of the order JUST PLACED???
-	confirmOrder($currentOrderId, $result);
+	//confirmOrder($currentOrderId, $result);
 }
 
 function confirmOrder($thisOrderID, $result){
@@ -53,6 +53,7 @@ function confirmOrder($thisOrderID, $result){
  	echo "";
  	echo ("<p id='heading'>Confirm Order</p>");
  	echo ("<hr style='border:1px solid #006341;margin: 0px;'>");
+ 	echo ("<p>201 Powell St,<br/> San Francisco,<br/> CA 94102</p>");
  	//print_r($result);
  	echo ("<dl>");
  	for($i=0; $i<count($result["orders"]); $i++){
@@ -62,11 +63,12 @@ function confirmOrder($thisOrderID, $result){
 				echo ("<dd>".$result["orders"][$i]["items"][$j]["milk_type"]."</dd>"); //TODO: change milk_type to milk
 		    }
 		    echo ("</dl>");
- 			echo ("<hr style='border:1px solid #006341;margin: 0px;'>");
- 			echo ("<p style='text-align: right;'>Order Total $". $result["orders"][0]["amount"]."</p>");
+ 			echo ("<hr style='border:1px dashed #006341;margin: 0px;'>");
+ 			echo ("<p style='text-align: right;padding: 3% 0 8% 0; font-weight:600;'>Order Total $". $result["orders"][0]["amount"]."</p>");
  		}
  	}
- 	echo "<button type='submit' class='btn btn-block' style='background: #006341; color: white; font-size: 15px; font-weight: 600;''>PAY</button>";
+ 	echo "<div class='row'><div class='col-xs-6'><button type='submit' class='btn btn-block' style='background: #006341; color: white; font-size: 15px; font-weight: 600;''>CANCEL</button></div>";
+ 	echo "<div class='col-xs-6'><button type='submit' class='btn btn-block' style='background: #006341; color: white; font-size: 15px; font-weight: 600;''>PAY</button></div></div>";
 
  	//if($result["orders"]["_id"])
  	//echo ("Size ====> ".$result["orders"][0]["items"][0]["size"]);
