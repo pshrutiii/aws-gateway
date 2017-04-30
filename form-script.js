@@ -1,3 +1,23 @@
+//Init options
+toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "newestOnTop": true,
+  "progressBar": false,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": true,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+
+
 //Calculate total cost for an order
 function calc_total(price){
     var sum = 0;
@@ -64,7 +84,9 @@ $('.order-now').submit(function(){
         $.post( "post.php", {Orderdata: data}, function(response) {
           $(".result" ).html(response);
         });
-        alert("Order was PLACED!");
+        
+        toastr.success("Your order be placed. Thank you for shopping with Restbucks.", "Order placed!!");
+        //alert("Order was PLACED!");
     }
     
 
