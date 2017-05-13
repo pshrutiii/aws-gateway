@@ -47,7 +47,6 @@ $('.order-now').submit(function(){
       $(".result" ).html(response);
     });
     alert("Order was PLACED!");
-    //toastr.success("Your order be placed. Thank you for shopping with Restbucks.", "Order placed!!");
     return false;
 });
 
