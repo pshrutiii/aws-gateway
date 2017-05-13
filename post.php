@@ -78,6 +78,7 @@ function confirmOrder($thisOrderID, $result, $url){
  	$payLink = $url. $result["order"]["links"][0]["pay"];
  	echo "<div class='row'><div class='col-xs-6'><a href='".$deleteLink."' type='submit' class='btn btn-block' style='background: #006341; color: white; font-size: 15px; font-weight: 600;''>CANCEL</a></div>";
  	echo "<div class='col-xs-6'><a href='".$payLink."' type='submit' class='btn btn-block' style='background: #006341; color: white; font-size: 15px; font-weight: 600;''>PAY</a></div></div>";
+ 	exit();
 }
 
 //Why is my drink taking so long?
