@@ -24,50 +24,29 @@ function get_price(size){
 
 //Getting order info
 $('.order-now').submit(function(){
-    var order = new Array();
-    var qty = new Array();
-    var drinkNames = new Array();
-    var milk = new Array();
-    var size = new Array();
-    var amt = new Array();
-
-    $('.preview-table .input-quantity').each(function(){
-      qty.push($(this).html());
-    });
-    $('.preview-table .input-name').each(function(){
-      drinkNames.push($(this).html());
-    });
-    $('.preview-table .input-milk').each(function(){
-      milk.push($(this).html());
-    });
-    $('.preview-table .input-size').each(function(){
-      size.push($(this).html());
-    });
-    $('.preview-table .input-amount').each(function(){
-      amt.push($(this).html());
+    order = {}
+    order['location'] = $('#location').val();
+    order['items'] = [];
+    var totalCost;
+    $('.preview-table tr').each(function(i, row) {
+      o = {}
+      o['qty'] = $(row).find('.input-quantity').html();
+      o['name'] = $(row).find('.input-name').html();
+      o['milk'] = $(row).find('.input-milk').html();
+      o['size'] = $(row).find('.input-size').html();
+      totalCost = parseFloat($('.preview-total').text());
+      if (o['qty'] != undefined) {
+        order['amount'] = totalCost;
+        order['items'].push(o);
+      }
     });
 
-    var loc = new Array();
-    loc.push($('#location').val());
-    if(milk.length === 0){
-        alert("----PLEASE MAKE AN ORDER!----");
-    }else{
-        //compiling an order
-        order.push(loc);
-        order.push(qty);
-        order.push(drinkNames);
-        order.push(milk);
-        order.push(size);
-        order.push(amt);
-
-        var data = JSON.stringify(order)
-        $.post( "post.php", {Orderdata: data}, function(response) {
-          $(".result" ).html(response);
-        });
-        alert("Order was PLACED!");
-    }
-    
-
+    //console.log(JSON.stringify(order));
+    var data = JSON.stringify(order);
+    $.post( "post.php", {Orderdata: data}, function(response) {
+      $(".result" ).html(response);
+    });
+    alert("Order was PLACED!");
     return false;
 });
 
