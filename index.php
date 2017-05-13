@@ -17,6 +17,9 @@
         background-color: #006341;
         height: 40px;
       }
+      #spacer{
+        margin-top: 25%;
+      }
       #heading{
         color: #006341;
         font-weight: 600;
@@ -39,6 +42,9 @@
         line-height: 0.5;
 
       }
+      .navbar-brand{
+        padding: 1% 0 10% 0;
+      }
       .results{
         background-color: #DCDDDF;
         padding: 2% 5%;
@@ -54,6 +60,7 @@
 </head>
 <body>
 <div class="default-bar"></div>
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -63,14 +70,6 @@
         <span class="icon-bar"></span>                        
       </button>
       <a class="navbar-brand" href="/" style="margin-left:5%"><img src="logo.png" style="width:8%;"/></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Order Online</a></li>
-        <li><a href="#">Menu</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-      </ul>
     </div>
   </div>
 </nav>
@@ -182,15 +181,48 @@
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container" id="spacer"> 
   <div class="row">
     <div class="col-xs-5 results">
       <p class="result"></p>
     </div>
+    <div class="col-xs-2 results">
+      <p id="cancelled"></p>
+    </div>
+    <div class="col-xs-2 results">
+      <p id="paid"></p>
+    </div>
+    <div class="col-xs-2 results">
+      <p id="countOrders"></p>
+    </div>
   </div>
 </div>
+<script src="../resources/jquery/jquery.min.js"></script> <!-- jQuery -->
+    <script>
+    function test(){
+        $('#cancelBtn').click(function() {
+            var cancelUrl = $(this).attr("href");
+            $.post("cancelPost.php", {link: cancelUrl}, function(cancelUrl){
+                document.getElementById("cancelled").innerHTML = "Thank you your order has been CANCELLED! ";
+            });
+        });
+        $('#payBtn').click(function() {
+            var payUrl = $(this).attr("href");
+            $.post("payPost.php", {link: payUrl}, function(payUrl){
+                document.getElementById("paid").innerHTML = "Payment Received!" ;
+            });
+        });
+        $('#showAllBtn').click(function() {
+            var getUrl = $(this).attr("href");
+            $.get("getPost.php", {link: getUrl}, function(response){
+                $("#countOrders" ).html(response);
+            });
+        });        
+    }
+    </script>
 
-  <script src="../resources/jquery/jquery.min.js"></script> <!-- jQuery -->
+
+  
   <script src="../resources/bootstrap/js/bootstrap.min.js"></script> <!-- Bootstrap Core JavaScript -->
   <script src="form-script.js"></script>
   
