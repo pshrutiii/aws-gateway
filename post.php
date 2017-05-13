@@ -78,7 +78,7 @@ function confirmOrder($thisOrderID, $result, $url){
  	$payLink = $url. $result["order"]["links"][0]["pay"];
  	echo "<div class='row'><div class='col-xs-6'><a href='".$deleteLink."' type='submit' class='btn btn-block' style='background: #006341; color: white; font-size: 15px; font-weight: 600;''>CANCEL</a></div>";
  	echo "<div class='col-xs-6'><a href='".$payLink."' type='submit' class='btn btn-block' style='background: #006341; color: white; font-size: 15px; font-weight: 600;''>PAY</a></div></div>";
- 	exit();
+ 	
 }
 
 //Why is my drink taking so long?
@@ -113,7 +113,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 	//getALlOrders(); //TODO: currently it's GETTING ALL ORDERS & this is NOT needed here!
 	postOrder($order); //TODO: uncomment this!!
-
+	exit();
 	//TODO: CLEAN THIS UP... it's only for testing!
 	#$url = "http://52.53.62.62:9090/orders";
 	#$result = get_data($url);
