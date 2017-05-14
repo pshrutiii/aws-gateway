@@ -199,17 +199,25 @@
 </div>
 <script src="../resources/jquery/jquery.min.js"></script> <!-- jQuery -->
     <script>
+    var pay = false;
     function test(){
         $('#cancelBtn').click(function() {
             var cancelUrl = $(this).attr("href");
             $.post("cancelPost.php", {link: cancelUrl}, function(cancelUrl){
-                document.getElementById("cancelled").innerHTML = "Thank you your order has been CANCELLED! ";
+                var message;
+                if(pay === true){
+                    message= 'Sorry! Your order has already been completed.';   
+                } else{
+                    message = "Thank you your order has been CANCELLED! ";
+                }
+                document.getElementById("cancelled").innerHTML = message;
             });
         });
         $('#payBtn').click(function() {
             var payUrl = $(this).attr("href");
             $.post("payPost.php", {link: payUrl}, function(payUrl){
                 document.getElementById("paid").innerHTML = "Payment Received!" ;
+                pay =true;
             });
         });
         $('#showAllBtn').click(function() {
