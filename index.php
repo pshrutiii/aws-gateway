@@ -9,9 +9,10 @@
     <link rel='shortcut icon' href='fav.png' type='image/x-icon'/ >
     <title>Starbucks Page</title>
 
-    
+        
     <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap Core CSS -->
     <link href="/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"><!-- Custom Fonts -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"> <!-- Toastr CDN CSS -->
     <style>
       .default-bar{
         background-color: #006341;
@@ -232,6 +233,7 @@
 
   
   <script src="../resources/bootstrap/js/bootstrap.min.js"></script> <!-- Bootstrap Core JavaScript -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> <!-- Toastr Min CDN JS -->	
   <script src="form-script.js"></script>
   
 </body>
