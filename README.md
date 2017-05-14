@@ -1,5 +1,8 @@
 # Starbucks Application Portal
 
+## Architecture
+[Architecture](Architecture.png)
+
 ## Tenant 1 - NODEJS REST API
 [TENANT 1 GITHUB](https://github.com/arunabh05/restbucks-nodejs)
 
