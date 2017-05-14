@@ -1,3 +1,23 @@
+
+//Init options		
+toastr.options = {		
+  "closeButton": true,		
+  "debug": false,		
+  "newestOnTop": true,		
+  "progressBar": false,		
+  "positionClass": "toast-top-right",		
+  "preventDuplicates": true,		
+  "onclick": null,		
+  "showDuration": "300",		
+  "hideDuration": "1000",		
+  "timeOut": "5000",		
+  "extendedTimeOut": "1000",		
+  "showEasing": "swing",		
+  "hideEasing": "linear",		
+  "showMethod": "fadeIn",		
+  "hideMethod": "fadeOut"		
+}
+
 //Calculate total cost for an order
 function calc_total(price){
     var sum = 0;
@@ -46,7 +66,7 @@ $('.order-now').submit(function(){
     $.post( "post.php", {Orderdata: data}, function(response) {
       $(".result" ).html(response);
     });
-    alert("Your order has been PLACED!");
+    toastr.success("Your order has been PLACED!");
     return false;
 });
 
