@@ -46,7 +46,7 @@ $('.order-now').submit(function(){
     $.post( "post.php", {Orderdata: data}, function(response) {
       $(".result" ).html(response);
     });
-    alert("Order was PLACED!");
+    alert("Your order has been PLACED!");
     return false;
 });
 
@@ -77,6 +77,4 @@ $('.add-item').submit(function(){
     calc_total();
 
     return false;
-});  
-
-
+}); 
