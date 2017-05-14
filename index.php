@@ -206,9 +206,9 @@
             $.post("cancelPost.php", {link: cancelUrl}, function(cancelUrl){
                 var message;
                 if(pay === true){
-                    message= 'Sorry! Your order has already been completed.';   
+                    message= 'Sorry! This order has been served.';   
                 } else{
-                    message = "Thank you your order has been CANCELLED! ";
+                    message = "Thank you! your order has been CANCELLED! ";
                 }
                 document.getElementById("cancelled").innerHTML = message;
             });
